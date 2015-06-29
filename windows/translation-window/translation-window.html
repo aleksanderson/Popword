@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> </title>
+    <link rel="stylesheet" href="translation-window.css">
+
+    <script type="text/javascript">
+        var ipc = require('ipc');
+
+
+        ipc.on('translation-ready', function(obj) {
+            document.querySelector('#translation-phrase').innerHTML = obj[0].text;
+
+            var translation = '';
+            obj.forEach(function(tr) {
+                translation += '<div>';
+                translation += '<p class="transcription">[' + tr.ts + ']</p>';
+                translation += '<table>';
+                tr.tr.forEach(function(eltr){
+                    translation += '<tr><td>' + eltr.text + '</td></tr>';
+                });
+                translation += '</table>';
+                translation += '</div>';
+            });
+
+            document.querySelector('#translated-phrase').innerHTML = translation;
+        });
+
+        window.addEventListener('load', function() {
+            document.querySelector('.boxclose').addEventListener('click', function() {
+               ipc.send('close-translation-window');
+            });
+        });
+    </script>
+
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1 id="translation-phrase"></h1>
+        <button class="boxclose">X</button>
+    </header>
+    <section class="main">
+        <p id="translated-phrase"></p>
+    </section>
+    <footer>
+    </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+{
+  "name": "Popword",
+  "productName": "Popword",
+  "version": "0.0.0",
+  "description": "My breathtaking app",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": "aleksanderson/quickt",
+  "author": {
+    "name": "Alex Manatskyi",
+    "email": "aleksanderson@gmail.com",
+    "url": "-"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . $npm_package_productName --prune --asar --platform=darwin --arch=x64 --version=0.27.2"
+  },
+  "files": [
+    "index.js",
+    "index.html",
+    "index.css"
+  ],
+  "keywords": [
+    "popword, translator"
+  ],
+  "dependencies": {
+    "applescript": "^1.0.0",
+    "yandex-dictionary": "0.0.0"
+  },
+  "devDependencies": {
+    "electron-packager": "^4.1.2",
+    "electron-prebuilt": "^0.27.2",
+    "electron-debug": "^0.1.0"
+  },
+  "appSettings": {
+    "yandexDictionaryApikey": "dict.1.1.20150625T210302Z.53fc76b7f5ea0c8b.b2f64ab6f40b5e14781491b679fbe0275bb997a8"
+  }
+}
