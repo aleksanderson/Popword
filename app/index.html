@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Popword</title>
+    </head>
+    <body></body>
+
+    <!-- @if NODE_ENV='development' -->
+    <script src="http://localhost:8080/webpack-dev-server.js"></script>
+    <script src="http://localhost:8080/built/bundle.js"></script>
+    <!-- @endif -->
+
+    <!-- @if NODE_ENV='production' -->
+    <script src="./built/bundle.js"></script>
+    <!-- @endif -->
+</html>

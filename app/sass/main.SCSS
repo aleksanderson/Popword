@@ -1,0 +1,15 @@
+@import "variables";
+
+body {
+  padding: 5px;
+  margin: 0;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  color: $font-color;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 100;
+  margin: 0;
+  padding: 0;
+}
