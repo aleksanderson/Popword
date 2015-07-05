@@ -8,14 +8,8 @@
 $ npm install
 ```
 
-### Run
+### Run and Develop
 
 ```
-$ npm start
-```
-
-### Build
-
-```
-$ npm run build
+$ gulp dev
 ```
